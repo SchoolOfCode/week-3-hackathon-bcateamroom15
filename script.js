@@ -6,7 +6,7 @@
 async function getAndDisplayNewFact() {
   const { text } = await retrieveFact();
   // console.log({ text });
-  displayFact(fact);
+  displayFact(text);
 }
 //Pseudocode for game page
 
@@ -47,7 +47,8 @@ async function retrieveFact() {
 
 function displayFact(fact) {
   const factElement = document.getElementById("fact");
-  factElement.textContent = fact;
+  factElement.textContent = fact
+  // console.log(fact);
 }
 //access each specific question at a time,
 //access the correct answers and the incorrect answers,
