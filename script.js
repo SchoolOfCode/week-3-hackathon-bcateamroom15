@@ -9,6 +9,30 @@
 //5 buttons including the skip one - 4 for multiple choice
 //fetch API on js file
 //create async function which fetches the API
+async function fetchData() {
+    try {
+      const response = await fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      // Handle your data
+      return data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle any errors
+    }
+  }
+
+fetchData()
+
+//Access the question property fromm the API
+async function getQuestion() {
+  const { question } = await fetchData();
+  console.log({ question });
+}
+
+getQuestion()
 //access each specific question at a time,
 //access the correct answers and the incorrect answers,
 //log the correct and incorrect answers in random order for the user to see,
