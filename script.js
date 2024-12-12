@@ -11,7 +11,7 @@
 //create async function which fetches the API
 async function fetchData() {
     try {
-      const response = await fetch('https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple');
+      const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -27,9 +27,9 @@ async function fetchData() {
 fetchData()
 
 //Access the question property fromm the API
-async function getQuestion() {
-  const { question } = await fetchData();
-  console.log({ question });
+async function getFact() {
+  const { text } = await fetchData();
+  console.log({ text });
 }
 
 getQuestion()
