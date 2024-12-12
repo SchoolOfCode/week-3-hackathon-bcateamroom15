@@ -62,3 +62,37 @@ function chooseFakeOrTrueFact() {
 randomFakeFact()
 
 console.log(chooseFakeOrTrueFact())
+
+//Import the code from the other file
+
+async function getAndDisplayNewFact() {
+  const { text } = await retrieveFact();
+  // console.log({ text });
+  displayFact(text);
+}
+
+//create async function which fetches git add . the API
+async function retrieveFact() {
+  const response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/random", {
+    headers: {
+      Accept: "application/json",
+    }
+  });
+  const data = await response.json();
+  return data;
+}
+
+//Access the question property fromm the API
+function displayFact(fact) {
+  const factElement = document.getElementById("fact");
+  factElement.textContent = fact
+}
+
+// Waits for the DOM to be fully loaded and then displays an initial joke.
+document.addEventListener("DOMContentLoaded", getAndDisplayNewFact);
+
+//we need to display the correct answer once the has picked a response
+const newFactButton = document.getElementById("newFactBtn");
+
+
+newFactButton.addEventListener("click", getAndDisplayNewFact);
