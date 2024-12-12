@@ -13,7 +13,7 @@ async function getAndDisplayNewFact() {
 //html object which will be our trivia questions - this will show one quetsion at a time
 //5 buttons including the skip one - 4 for multiple choice
 //fetch API on js file
-//create async function which fetches the API
+//create async function which fetchesgit add . the API
 async function retrieveFact() {
   //   try {
   //     const response = await fetch('https://uselessfacts.jsph.pl/api/v2/facts/random');
@@ -63,3 +63,5 @@ const newFactButton = document.getElementById("newFactBtn");
 
 
 newFactButton.addEventListener("click", getAndDisplayNewFact);
+
+//testcomment
