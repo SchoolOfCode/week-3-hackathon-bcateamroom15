@@ -97,6 +97,11 @@ function displayFact(fact) {
   // console.log(fact);
 }
 
+let correctAnswer ;
+let incorrectAnswer ;
+
+function 
+
 // Waits for the DOM to be fully loaded and then displays an initial joke.
 document.addEventListener("DOMContentLoaded", chooseFakeOrTrueFact);
 
