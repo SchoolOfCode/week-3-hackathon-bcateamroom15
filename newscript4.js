@@ -93,9 +93,18 @@ const fakeFactsArr = [
     displayFact(fact); // Display the fact when the page loads
   });
   
-  const newFactButton = document.getElementById("newFactBtn");
+  const newFactFalseButton = document.getElementById("falseBtn");
+  // const newFactButton = document.querySelector("button");
   
-  newFactButton.addEventListener("click", async () => {
+  newFactFalseButton.addEventListener("click", async () => {
+    const fact = await chooseFakeOrTrueFact();
+    displayFact(fact); // Update the fact element with a new fact when the button is clicked
+  });
+  
+
+  const newFactTrueButton = document.getElementById("trueBtn");
+
+  newFactTrueButton.addEventListener("click", async () => {
     const fact = await chooseFakeOrTrueFact();
     displayFact(fact); // Update the fact element with a new fact when the button is clicked
   });

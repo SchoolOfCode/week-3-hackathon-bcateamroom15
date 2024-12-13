@@ -80,7 +80,7 @@ async function getAndDisplayNewFact() {
 
 //create async function which fetches the API
 async function retrieveFact() {
-  const response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/random", {
+  const response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/", {
     headers: {
       Accept: "application/json",
     }
